@@ -65,6 +65,20 @@ namespace dotnetfhirconsole
             var xmlText = serializer.SerializeToString(pat);
 
             Console.WriteLine(xmlText);
+
+
+            var eld = new ElementDefinition();
+            eld.ElementId = "Observation.value[x]:valueQuantity.code";
+            eld.Path = "Observation.value[x].code";
+            eld.Min = 1;
+
+            eld.Fixed = new Code("s");
+
+            xmlText = serializer.SerializeToString(eld);
+
+            Console.WriteLine(xmlText);
+
+ 
         }
     }
 }
